@@ -950,7 +950,9 @@ footer {
 @media (max-width: 768px) {
     section { padding: 80px 5%; }
     
-    .hero h1 { font-size: 3rem; }
+    .logo span { font-size: 1rem; letter-spacing: 1px; }
+    
+    .hero h1 { font-size: 3rem; line-height: 1.2; }
     .hero-subtitle { font-size: 1.1rem; letter-spacing: 4px; }
     .hero p { font-size: 1rem; margin-bottom: 30px; }
     
