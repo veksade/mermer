@@ -948,13 +948,13 @@ footer {
 }
 
 @media (max-width: 768px) {
-    section { padding: 80px 5%; }
+    section { padding: 60px 20px; }
     
-    .logo span { font-size: 1rem; letter-spacing: 1px; }
+    .logo span { font-size: 0.95rem; letter-spacing: 1px; }
     
-    .hero h1 { font-size: 3rem; line-height: 1.2; }
-    .hero-subtitle { font-size: 1.1rem; letter-spacing: 4px; }
-    .hero p { font-size: 1rem; margin-bottom: 30px; }
+    .hero h1 { font-size: 2.8rem; line-height: 1.3; margin-top: 15px; }
+    .hero-subtitle { font-size: 1rem; letter-spacing: 3px; line-height: 1.4; }
+    .hero p { font-size: 0.95rem; margin-bottom: 35px; line-height: 1.5; }
     
     .hero-btns {
         flex-direction: column;
@@ -993,10 +993,11 @@ footer {
 }
 
 @media (max-width: 576px) {
-    .hero h1 { font-size: 2.4rem; }
-    .hero-subtitle { font-size: 0.9rem; letter-spacing: 3px; }
+    .logo span { font-size: 0.85rem; letter-spacing: 0.5px; }
+    .hero h1 { font-size: 2.2rem; line-height: 1.3; }
+    .hero-subtitle { font-size: 0.85rem; letter-spacing: 2px; }
     
-    .ba-slider { height: 300px; border-radius: 12px; }
+    .ba-slider { height: 280px; border-radius: 12px; }
     
     .gallery-grid {
         grid-template-columns: 1fr;
