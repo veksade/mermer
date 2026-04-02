@@ -584,8 +584,19 @@ section {
     height: auto;
     min-height: 300px;
     display: block;
+    -webkit-animation: fadeIn 0.5s ease forwards;
     animation: fadeIn 0.5s ease forwards;
     pointer-events: auto;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    display: block;
 }
 
 @supports (aspect-ratio: 1/1) {
@@ -598,6 +609,8 @@ section {
 .gallery-item.video {
     min-height: 200px;
     grid-column: span 2;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 @supports (aspect-ratio: 16/9) {

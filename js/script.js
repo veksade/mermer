@@ -107,6 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(reveal);
     });
 
+    // iOS Safari / Failsafe: Eğer 1.5 saniye içinde animasyon tetiklenmezse zorla göster
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.querySelectorAll('.reveal, .reveal-up, .reveal-scale').forEach(el => {
+                if (!el.classList.contains('active')) {
+                    el.classList.add('active');
+                }
+            });
+        }, 1500);
+    });
+
     // Add animation classes to reveal-up manually for effect
     document.querySelectorAll('.reveal-up').forEach((el, index) => {
         el.style.transitionDelay = `${index * 0.1}s`;
