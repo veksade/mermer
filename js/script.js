@@ -256,6 +256,38 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeLightboxFunc();
     });
 
+    // 7. Animated Counter (Stats Section)
+    const statNumbers = document.querySelectorAll('.stat-number');
+
+    const animateCounter = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const duration = 1800;
+        const start = performance.now();
+
+        const step = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
+    };
+
+    if (statNumbers.length > 0) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(el => counterObserver.observe(el));
+    }
+
     // 6. Smooth Scroll Reveal Logic (Adding CSS classes via JS for variety)
     const style = document.createElement('style');
     style.innerHTML = `
